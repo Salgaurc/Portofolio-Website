@@ -2,10 +2,14 @@
 import React from 'react';
 import styles from './Dashboard.module.css';
 import HeroSection from '../HeroSection/HeroSection';
+import Navbar from '../Navbar/Nav';
+import BackgroundAnimation from '../BackgroundAnimation/BackgroundAnimation';
 
 function Dashboard() {
   return (
     <>
+      <Navbar />
+      <BackgroundAnimation />
       <div className={styles.dashboardContainer}>
         <section id='section1' className={styles.section1}>
           <HeroSection />
