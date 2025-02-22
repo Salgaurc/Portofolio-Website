@@ -8,21 +8,26 @@ import BackgroundAnimation from '../BackgroundAnimation/BackgroundAnimation';
 function Dashboard() {
   return (
     <>
+    <div className='relative min-h-screen'>
       <Navbar />
       <BackgroundAnimation />
-      <div className={styles.dashboardContainer}>
-        <section id='section1' className={styles.section1}>
+      <div className='relative z-10 pt-[4rem]'>
+        <section id='section1' className="h-screen flex items-center justify-center text-white">
           <HeroSection />
         </section>
-        <section id='section2' className={styles.section1}>
+        <section id='section2' className={`${styles.section2} flex items-center justify-center h-screen`}
+          >
 
         </section>
-        <section id='section3' className={styles.section1}>
+        <section id='section3' className={`${styles.section3} flex items-center justify-center h-screen`}
+          >
 
         </section>
-        <section id='section4' className={styles.section1}>
+        <section id='section4' className={`${styles.section2} flex items-center justify-center h-screen`}
+          >
 
         </section>
+      </div>
       </div>
     </>
   );

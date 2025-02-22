@@ -4,8 +4,8 @@ import React from 'react'
 
 function HeroSection() {
     return (
-        <div className={`${styles.heroSection} max-w-3xs`}>
-            <h1>hello</h1>
+        <div className={`${styles.heroSection}  bg-blue-500 h-10 flex items-center justify-center`}>
+            <h1 className="text-center">hello</h1>
         </div>
     )
 }

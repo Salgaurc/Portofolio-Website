@@ -1,7 +1,15 @@
 .dashboardContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  min-height: fit-content;
+  background-color: aqua;  
 }
+
+.section1 {
+  padding: 7rem;
+  height: 100vh;
+  background-color: #f7f7f7;
+  position: relative;
+  z-index: 10;
+}
+
