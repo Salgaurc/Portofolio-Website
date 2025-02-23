@@ -1,15 +1,23 @@
 .dashboardContainer {
   display: flex;
   flex-direction: column;
-  min-height: fit-content;
-  background-color: aqua;  
+  min-height: 100vh;
+  max-width: 100%;
+  background-color: aqua; 
+  padding-top: 1rem; 
+  overflow-x: hidden;
+}
+
+.section2, .section3, .section4 {
+  width: 100%;
+  height: 100vh; /* Make sure each section takes up the full viewport height */
+  max-width: 100%; /* Ensure sections do not overflow */
+  box-sizing: border-box; /* Avoid overflow from padding/border */
+  padding: 0; /* Avoid unwanted padding */
 }
 
 .section1 {
-  padding: 7rem;
   height: 100vh;
-  background-color: #f7f7f7;
-  position: relative;
-  z-index: 10;
 }
+
 

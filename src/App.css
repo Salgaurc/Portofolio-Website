@@ -1,11 +1,10 @@
 #root {
   height: 100dvh;
   width: 100dvw;
+  --grey-brand: #27272e;
+  --light-brand: #bfccdb;
+  --orange-brand: #d9b46f;
 }
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import './index.css';
-import React from 'react';
 import './App.css'
+import React from 'react';
 import Dashboard from './components/Dashboard/Dashboard'
 import AppLayout from './components/AppLayout/AppLayout'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';

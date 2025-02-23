@@ -1,4 +1,54 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('/public/Fonts/RobotoCondensed-Regular.ttf')format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     font-size: 62.5%;
 }
-@import "tailwindcss";
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling globally */
+  scroll-behavior: smooth;
+}
+ 
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: var(--grey-brand)
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  a{
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }  
