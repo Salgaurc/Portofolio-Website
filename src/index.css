@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@import "tailwindcss/preflight";
 @font-face {
     font-family: 'Roboto Condensed';
     src: url('/public/Fonts/RobotoCondensed-Regular.ttf')format('truetype');
