@@ -1,0 +1,72 @@
+.skillsContainer {
+    padding: 2rem 10rem;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.skillsContainer>h1 {
+    color: var(--grey-brand);
+    font-size: 5rem;
+    text-shadow: 0 0 3px black;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid var(--grey-brand);
+    width: 20rem;
+    padding-left: 4.5rem;
+}
+
+.frontendSkills {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5rem;
+    width: 100%;
+}
+
+.frontendSkills>div {
+    display: flex;
+}
+
+.frontendSkills>h1,
+.backendskills>h1 {
+    color: var(--gray-brand);
+    margin-bottom: 2rem;
+    font-size: 3rem;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+}
+
+.skill>img {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 1rem;
+}
+
+.skill>p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--light-brand);
+}
+
+.backendskills {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5rem;
+}
+
+.backendskills>div {
+    display: flex;
+}
+

@@ -4,6 +4,7 @@ import styles from './Dashboard.module.css';
 import HeroSection from '../HeroSection/HeroSection';
 import Navbar from '../Navbar/Nav';
 import BackgroundAnimation from '../BackgroundAnimation/BackgroundAnimation';
+import SkillsSection from '../SkillsSection/SkillsSection';
 
 
 
@@ -14,27 +15,29 @@ function Dashboard() {
       <div className="min-h-screen ">
         <Navbar />
         <BackgroundAnimation />
-        <div className="relative z-1 overflow-y-auto">
+        <div className={styles.dashboardContainer}>
           <section
             id="section1"
-            className={`${styles.section1} h-screen w-full flex items-center justify-center text-white`}>
+            className={styles.section1}
+          >
             <HeroSection />
           </section>
           <section
             id="section2"
-            className={`${styles.section2} flex items-center justify-center h-screen w-full`}
+            className={styles.section2}
           >
             {/* Section 2 Content */}
           </section>
           <section
             id="section3"
-            className={`${styles.section3} flex items-center justify-center h-screen w-full`}
+            className={styles.section3}
           >
             {/* Section 3 Content */}
+            <SkillsSection/>
           </section>
           <section
             id="section4"
-            className={`${styles.section2} flex items-center justify-center h-screen w-full`}
+            className={styles.section2} 
           >
             {/* Section 4 Content */}
           </section>

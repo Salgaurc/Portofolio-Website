@@ -1,7 +1,5 @@
 .heroContainer {
-    width: 100%;
-    height: 100vh;
-    box-sizing: border-box;
+    padding: 7rem 0 0 0;
 }
 
 .heroDiv {
@@ -95,3 +93,88 @@
 .platformsDiv>span:nth-child(3):hover {
     color: #e06969;
 }
+
+.laptopDiv {
+    height: 45rem;
+    width: 90rem;
+    margin-top: 6rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.threeDots {
+    height: 9%;
+    background-color: rgb(197, 197, 197);
+    padding: 0 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.threeDots>span {
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: #ff605c;
+    font-size: 1px;
+    border-radius: 50%;
+}
+
+.threeDots>span:nth-child(2) {
+    background-color: #ffbd44;
+    color: #ffbd44;
+}
+
+.threeDots>span:nth-child(3) {
+    background-color: #00ca4e;
+    color: #00ca4e;
+}
+
+.laptopScreen {
+    height: 91%;
+    background-color: #314452d1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--light-brand);
+    padding: 2.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.laptopScreen>div>p {
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+}
+
+.laptopScreen>div>span {
+    letter-spacing: 0.5px;
+    color: var(--orange-brand);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.flicker {
+    animation: flicker 1s infinite;
+    font-size: 1.5rem;
+}
+
+.flicker>span {
+    width: 1.5rem;
+    background-color: var(--orange-brand);
+}
+
+@keyframes flicker {
+    0% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }

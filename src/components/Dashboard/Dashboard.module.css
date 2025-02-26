@@ -1,23 +1,34 @@
 .dashboardContainer {
+  min-height: fit-content;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  max-width: 100%;
-  background-color: aqua; 
-  padding-top: 1rem; 
-  overflow-x: hidden;
-}
-
-.section2, .section3, .section4 {
-  width: 100%;
-  height: 100vh; /* Make sure each section takes up the full viewport height */
-  max-width: 100%; /* Ensure sections do not overflow */
-  box-sizing: border-box; /* Avoid overflow from padding/border */
-  padding: 0; /* Avoid unwanted padding */
 }
 
 .section1 {
-  height: 100vh;
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+}
+
+/** SECTION 2 **/
+.section2 {
+  height: fit-content;
+  padding-bottom: 30px;
 }
 
 
+/** SECTION 3 **/
+.section3 {
+  min-height: calc(100vh - 7rem);
+  height: fit-content;
+  
+}
+
+
+/** SECTION 4 **/
+.section4 {
+  min-height: calc(100vh - 70px);
+  height: fit-content;
+}

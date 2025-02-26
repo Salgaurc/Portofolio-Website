@@ -16,27 +16,25 @@ const Navbar = () => {
     }
   };
 
-  // Update active section when scrolling
-  const handleScroll = () => {
-    const sections = ['section1', 'section2', 'section3', 'section4'];
-    for (const sectionId of sections) {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        // Check if the section is in view (with some offset)
-        if (rect.top <= 0 && rect.bottom >= 0) {
-          setActiveSection(sectionId);
-          break;
-        }
-      }
-    }
-  };
-
-  // Add scroll event listener
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    const sections = document.querySelectorAll('section'); // Select all sections
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id); // Set the active section when it's in view
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the section is visible
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section)); // Observe each section
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      sections.forEach((section) => observer.unobserve(section)); // Cleanup observer on unmount
     };
   }, []);
 
@@ -44,29 +42,29 @@ const Navbar = () => {
     <div className={styles.header}>
       <nav className={styles.navbar}>
         <ul className={styles.navMenu}>
-          <li 
+          <li
             className={`${styles.navItem} ${activeSection === 'section1' ? styles.active : ''}`}
             onClick={() => handleScrollToSection('section1')}
           >
             Info
           </li>
-          <li 
+          <li
             className={`${styles.navItem} ${activeSection === 'section2' ? styles.active : ''}`}
             onClick={() => handleScrollToSection('section2')}
           >
             Projects
           </li>
-          <li 
+          <li
             className={`${styles.navItem} ${activeSection === 'section3' ? styles.active : ''}`}
             onClick={() => handleScrollToSection('section3')}
           >
             Skills
           </li>
-          <li 
+          <li
             className={`${styles.navItem} ${activeSection === 'section4' ? styles.active : ''}`}
             onClick={() => handleScrollToSection('section4')}
           >
-            Contacts
+            Contact
           </li>
         </ul>
       </nav>
