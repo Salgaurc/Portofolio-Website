@@ -1,5 +1,8 @@
-@import "tailwindcss";
-@import "tailwindcss/preflight";
+/* @import "tailwindcss"; */
+/* @import "tailwindcss/preflight"; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @font-face {
     font-family: 'Roboto Condensed';
     src: url('/public/Fonts/RobotoCondensed-Regular.ttf')format('truetype');
