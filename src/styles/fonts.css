@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "RobotoCondensed";
+    src: url("/fonts/RobotoCondensed-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+    font-family: "RobotoCondensed", sans-serif;
+}

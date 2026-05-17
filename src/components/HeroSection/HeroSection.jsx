@@ -2,7 +2,7 @@
 import styles from './HeroSection.module.css';
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
-import resume from '../../assets/cv-claudiu-salgau.pdf'
+import resume from '../../assets/Claudiu-FlowCV-2025.pdf'
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { TbFileCv } from 'react-icons/tb';
 
@@ -16,7 +16,7 @@ function HeroSection() {
                     </div>
                     <div className={styles.description}>
                         <h3>Hello, I&apos;m Claudiu. I&apos;m a Junior Full-Stack Developer</h3>
-                        <h2> Detail oriented | Passionate | Adaptable</h2>
+                        <h2> Detail-oriented | Creative | Adaptive</h2>
                         <div className={styles.platformsDiv}>
                             <span> 
                                 <a href="https://github.com/Salgaurc" target='_blank' rel='noopener noreferrer'>
@@ -29,7 +29,7 @@ function HeroSection() {
                                 </a>
                             </span>
                             <span> 
-                                <a href={resume} download='cv-claudiu-salgau'>
+                                <a href={resume} download='Claudiu-FlowCV-2025'>
                                     <TbFileCv/>
                                 </a>
                             </span>

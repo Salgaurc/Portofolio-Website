@@ -4,7 +4,7 @@
 
 .heroDiv {
     width: 90rem;
-    height: 25rem;
+    height: 26rem;
     display: flex;
     align-items: flex-start;
     justify-content: space-evenly;
@@ -28,7 +28,7 @@
     background-color: white;
 }
 
-.photoDiv img{
+.photoDiv img {
     height: 100%;
     width: 100%;
     max-width: 18rem;
@@ -50,14 +50,14 @@
     padding: 0.5rem;
 }
 
-.description>h3 {
+.description > h3 {
     color: var(--light-brand);
     font-size: 2.5rem;
     text-shadow: 0 0 3px #aaa8a8;
     align-self: flex-end;
 }
 
-.description>h2 {
+.description > h2 {
     color: var(--light-brand);
     font-size: 2rem;
     text-shadow: 0 0 3px #aaa8a8;
@@ -66,7 +66,7 @@
 }
 
 .platformsDiv {
-    height: 4rem;
+    height: 9rem;
     display: flex;
     align-self: flex-end;
     gap: 4rem;
@@ -75,22 +75,23 @@
     justify-content: flex-end;
 }
 
-.platformsDiv>span {
-    font-size: 3rem;
+.platformsDiv > span {
+    font-size: 5rem;
     transition: 0.5s;
     cursor: pointer;
 }
 
-.platformsDiv>span:hover {
+.platformsDiv > span:hover {
     scale: 1.6;
     transition: 0.5s;
     color: black;
 }
 
-.platformsDiv>span:nth-child(2):hover {
+.platformsDiv > span:nth-child(2):hover {
     color: #0e76a8;
 }
-.platformsDiv>span:nth-child(3):hover {
+
+.platformsDiv > span:nth-child(3):hover {
     color: #e06969;
 }
 
@@ -103,32 +104,30 @@
     box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, 0.5);
 }
 
+/* 🔧 FIX IMPORTANT: breathing room for header bar */
 .threeDots {
     height: 9%;
     background-color: rgb(197, 197, 197);
-    padding: 0 1.8rem;
+    padding: 1rem 1.8rem; /* <- FIX */
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 1rem;
 }
 
-.threeDots>span {
+.threeDots > span {
     width: 1.4rem;
     height: 1.4rem;
     background-color: #ff605c;
-    font-size: 1px;
     border-radius: 50%;
 }
 
-.threeDots>span:nth-child(2) {
+.threeDots > span:nth-child(2) {
     background-color: #ffbd44;
-    color: #ffbd44;
 }
 
-.threeDots>span:nth-child(3) {
+.threeDots > span:nth-child(3) {
     background-color: #00ca4e;
-    color: #00ca4e;
 }
 
 .laptopScreen {
@@ -140,20 +139,20 @@
     padding: 2.5rem 4rem;
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
+    gap: 1rem;
 }
 
-.laptopScreen>div>p {
+.laptopScreen > div > p {
     letter-spacing: 1px;
     font-size: 1.8rem;
     margin: 0;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
-.laptopScreen>div>span {
+.laptopScreen > div > span {
     letter-spacing: 0.5px;
     color: var(--orange-brand);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
@@ -162,21 +161,128 @@
     font-size: 0.8rem;
 }
 
-.flicker>span {
+.flicker > span {
     width: 1.5rem;
     background-color: var(--orange-brand);
 }
 
 @keyframes flicker {
-    0% {
-      opacity: 1;
-    }
-  
-    50% {
-      opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-    }
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ===================== */
+/* RESPONSIVE LAYER */
+/* ===================== */
+
+@media (max-width: 1024px) {
+  .heroDiv {
+    width: 95%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    text-align: center;
   }
+
+  .description {
+    align-items: center;
+  }
+
+  .description > h3,
+  .description > h2 {
+    align-self: center;
+  }
+
+  .platformsDiv {
+    justify-content: center;
+    align-self: center;
+  }
+
+  .laptopDiv {
+    width: 95%;
+    height: auto;
+    margin-top: 4rem;
+  }
+
+  .laptopScreen {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    padding: 4rem 1rem 0 1rem;
+  }
+
+  .heroDiv {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .photoDiv {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .description > h3 {
+    font-size: 1.8rem;
+  }
+
+  .description > h2 {
+    font-size: 1.4rem;
+    word-spacing: normal;
+  }
+
+  .platformsDiv {
+    gap: 2rem;
+  }
+
+  .platformsDiv > span {
+    font-size: 3.5rem;
+  }
+
+  .laptopDiv {
+    margin-top: 5rem; /* FIX spacing */
+  }
+
+  .laptopScreen > div > p {
+    font-size: 1.4rem;
+  }
+
+  .laptopScreen > div > span {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroDiv {
+    padding: 1.5rem;
+  }
+
+  .photoDiv {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .description > h3 {
+    font-size: 1.5rem;
+  }
+
+  .description > h2 {
+    font-size: 1.2rem;
+  }
+
+  .platformsDiv > span {
+    font-size: 3rem;
+  }
+
+  .laptopScreen {
+    padding: 1.5rem;
+  }
+
+  .laptopDiv {
+    margin-top: 6rem; /* FIX final mobile spacing */
+  }
+}

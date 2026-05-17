@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import "./styles/fonts.css";
 import './index.css';
 import './App.css'
 import React from 'react';

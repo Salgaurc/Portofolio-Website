@@ -60,12 +60,6 @@ const Navbar = () => {
           >
             Skills
           </li>
-          <li
-            className={`${styles.navItem} ${activeSection === 'section4' ? styles.active : ''}`}
-            onClick={() => handleScrollToSection('section4')}
-          >
-            Contact
-          </li>
         </ul>
       </nav>
     </div>

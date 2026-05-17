@@ -5,6 +5,7 @@ import HeroSection from '../HeroSection/HeroSection';
 import Navbar from '../Navbar/Nav';
 import BackgroundAnimation from '../BackgroundAnimation/BackgroundAnimation';
 import SkillsSection from '../SkillsSection/SkillsSection';
+import Projects from '../Projects/Projects';
 
 
 
@@ -27,6 +28,7 @@ function Dashboard() {
             className={styles.section2}
           >
             {/* Section 2 Content */}
+            <Projects />
           </section>
           <section
             id="section3"

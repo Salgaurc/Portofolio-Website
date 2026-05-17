@@ -8,18 +8,18 @@ const BackgroundAnimation = () => {
 
   // Define image paths (note: paths are relative to the 'public' folder in React)
   const imagePaths = useMemo(() => [
-    "/public/Tech Logos/css.png",
-    "/public/Tech Logos/expressJS.png",
-    "/public/Tech Logos/firebase.png",
-    "/public/Tech Logos/git.png",
-    "/public/Tech Logos/html2.png",
-    "/public/Tech Logos/javascript.png",
-    "/public/Tech Logos/mongodb-logo.png",
-    "/public/Tech Logos/nodejs.png",
-    "/public/Tech Logos/postman.webp",
-    "/public/Tech Logos/react-router.png",
-    "/public/Tech Logos/react.png",
-    "/public/Tech Logos/tailwind.png"
+    "/src/assets/tech-logos/css.png",
+    "/src/assets/tech-logos/expressJS.png",
+    "/src/assets/tech-logos/firebase.png",
+    "/src/assets/tech-logos/git.png",
+    "/src/assets/tech-logos/html2.png",
+    "/src/assets/tech-logos/javascript.png",
+    "/src/assets/tech-logos/mongodb-logo.png",
+    "/src/assets/tech-logos/nodejs.png",
+    "/src/assets/tech-logos/postman.webp",
+    "/src/assets/tech-logos/react-router.png",
+    "/src/assets/tech-logos/react.png",
+    "/src/assets/tech-logos/tailwind.png"
   ], []);
 
   // Wrap the createBubble function in useCallback to prevent it from being recreated on every render
