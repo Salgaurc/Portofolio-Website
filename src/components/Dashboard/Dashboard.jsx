@@ -41,7 +41,6 @@ function Dashboard() {
             id="section4"
             className={styles.section2} 
           >
-            {/* Section 4 Content */}
           </section>
         </div>
       </div>

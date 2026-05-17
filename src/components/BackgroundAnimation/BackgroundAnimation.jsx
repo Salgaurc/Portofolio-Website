@@ -1,87 +1,90 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useRef, useCallback, useMemo } from 'react';
-import gsap from 'gsap';
-import styles from './BackgroundAnimation.module.css';
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import styles from "./BackgroundAnimation.module.css";
 
 const BackgroundAnimation = () => {
   const backgroundRef = useRef(null);
 
-  // Define image paths (note: paths are relative to the 'public' folder in React)
-  const imagePaths = useMemo(() => [
-    "/src/assets/tech-logos/css.png",
-    "/src/assets/tech-logos/expressJS.png",
-    "/src/assets/tech-logos/firebase.png",
-    "/src/assets/tech-logos/git.png",
-    "/src/assets/tech-logos/html2.png",
-    "/src/assets/tech-logos/javascript.png",
-    "/src/assets/tech-logos/mongodb-logo.png",
-    "/src/assets/tech-logos/nodejs.png",
-    "/src/assets/tech-logos/postman.webp",
-    "/src/assets/tech-logos/react-router.png",
-    "/src/assets/tech-logos/react.png",
-    "/src/assets/tech-logos/tailwind.png"
-  ], []);
-
-  // Wrap the createBubble function in useCallback to prevent it from being recreated on every render
-  const createBubble = useCallback(() => {
-    const bubble = document.createElement("li");
-    backgroundRef.current.appendChild(bubble);
-
-    // Randomly select an image from the array
-    const randomImage = imagePaths[Math.floor(Math.random() * imagePaths.length)];
-
-    // Create an image element inside the bubble
-    const image = document.createElement("img");
-    image.src = randomImage;
-    image.alt = "Bubble image";
-    image.style.width = "100%";
-    image.style.height = "100%";
-    image.style.objectFit = "cover";
-
-    bubble.appendChild(image);
-
-    // Randomize size and position of the bubble
-    const size = `${gsap.utils.random(2, 6)}rem`; // Random size between 10rem and 20rem
-    const left = `${gsap.utils.random(0, 100)}%`; // Random left position within the viewport
-
-    // Set initial styles for each bubble
-    gsap.set(bubble, {
-      position: "absolute",
-      left: left,
-      bottom: `-${size}`, // Start each bubble below the viewport
-      width: size,
-      height: size,
-      opacity: 0, // Start with opacity 0 to fade in
-      overflow: "hidden"
-    });
-
-    // Bubble animation with GSAP
-    gsap.to(bubble, {
-      opacity: 1, // Fade in effect
-      scale: 1.5, // Slightly grow bubble
-      y: "-100vh", // Move the bubble upwards, off-screen
-      rotation: gsap.utils.random(0, 360), // Random rotation
-      repeat: 0, // No need to repeat here
-      duration: 8 + gsap.utils.random(4, 8), // Randomize animation duration between 8s and 12s
-      delay: gsap.utils.random(0, 5), // Random delay for each bubble
-      ease: "power1.out", // Ease out to slow down the bubble as it reaches the top
-      onComplete: () => {
-        // Remove the bubble after it completes the animation
-        bubble.remove();
-        // Delay next bubble creation to prevent clutter
-        setTimeout(createBubble, 1500); // Increase this delay to create bubbles more slowly
-      },
-    });
-  }, [imagePaths]); // Empty dependency array so it won't change on each render
+  const imagePaths = [
+    "/tech-logos/css.png",
+    "/tech-logos/expressJS.png",
+    "/tech-logos/firebase.png",
+    "/tech-logos/git.png",
+    "/tech-logos/html2.png",
+    "/tech-logos/javascript.png",
+    "/tech-logos/mongodb-logo.png",
+    "/tech-logos/nodejs.png",
+    "/tech-logos/postman.webp",
+    "/tech-logos/react-router.png",
+    "/tech-logos/react.png",
+    "/tech-logos/tailwind.png",
+  ];
 
   useEffect(() => {
-    if (!backgroundRef.current) return;
-    // Create the initial set of bubbles with a slight delay between them
-    const initialBubbles = Array.from({ length: 5 }); // Create fewer bubbles initially
-    initialBubbles.forEach((_, index) => {
-      setTimeout(createBubble, index * 1000); // Delay each bubble's creation for smooth appearance
-    });
-  }, [createBubble]);
+    const container = backgroundRef.current;
+    if (!container) return;
+
+    let isActive = true;
+    const timeouts = [];
+
+    const createBubble = () => {
+      if (!isActive || !container) return;
+
+      const bubble = document.createElement("li");
+      container.appendChild(bubble);
+
+      const img = document.createElement("img");
+      img.src = imagePaths[Math.floor(Math.random() * imagePaths.length)];
+      img.alt = "tech logo";
+      img.style.width = "100%";
+      img.style.height = "100%";
+      img.style.objectFit = "cover";
+
+      bubble.appendChild(img);
+
+      const size = `${gsap.utils.random(2, 6)}rem`;
+      const left = `${gsap.utils.random(0, 100)}%`;
+
+      gsap.set(bubble, {
+        position: "absolute",
+        left,
+        bottom: `-${size}`,
+        width: size,
+        height: size,
+        opacity: 0,
+        overflow: "hidden",
+      });
+
+      gsap.to(bubble, {
+        opacity: 1,
+        scale: 1.5,
+        y: "-120vh",
+        duration: gsap.utils.random(8, 14),
+        ease: "power1.out",
+        onComplete: () => {
+          bubble.remove();
+        },
+      });
+    };
+
+    // initial burst
+    for (let i = 0; i < 5; i++) {
+      timeouts.push(
+        setTimeout(createBubble, i * 700)
+      );
+    }
+
+    // stable interval loop
+    const interval = setInterval(createBubble, 1500);
+
+    return () => {
+      isActive = false;
+      clearInterval(interval);
+      timeouts.forEach(clearTimeout);
+      container.innerHTML = "";
+    };
+  }, []);
 
   return <ul ref={backgroundRef} className={styles.background}></ul>;
 };

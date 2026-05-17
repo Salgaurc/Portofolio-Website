@@ -1,20 +1,20 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import styles from './SkillsSection.module.css';
-import html_logo from '../../assets/tech-logos/html2.png';
-import css_logo from '../../assets/tech-logos/css.png';
-import tailwind_logo from '../../assets/tech-logos/tailwind.png';
-import js_logo from '../../assets/tech-logos/javascript.png';
-import react_logo from '../../assets/tech-logos/react.png';
-import react_router_logo from '../../assets/tech-logos/react-router.png';
+import html_logo from '/public/tech-logos/html2.png';
+import css_logo from '/public/tech-logos/css.png';
+import tailwind_logo from '/public/tech-logos/tailwind.png';
+import js_logo from '/public/tech-logos/javascript.png';
+import react_logo from '/public/tech-logos/react.png';
+import react_router_logo from '/public/tech-logos/react-router.png';
 
-import nodeJS_logo from '../../assets/tech-logos/nodejs.png';
-import expressJS_logo from '../../assets/tech-logos/expressJS.png';
-import mongoDB_logo from '../../assets/tech-logos/mongodb-logo.png';
+import nodeJS_logo from '/public/tech-logos/nodejs.png';
+import expressJS_logo from '/public/tech-logos/expressJS.png';
+import mongoDB_logo from '/public/tech-logos/mongodb-logo.png';
 
-import firebase_logo from '../../assets/tech-logos/firebase.png';
-import git_logo from '../../assets/tech-logos/git.png';
-import postman_logo from '../../assets/tech-logos/postman.webp';
+import firebase_logo from '/public/tech-logos/firebase.png';
+import git_logo from '/public/tech-logos/git.png';
+import postman_logo from '/public/tech-logos/postman.webp';
 
 import { RevealLeft, RevealRight } from '../../Utils/Reveal';
 
