@@ -49,7 +49,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="py-16 px-6">
+    <div className="py-16 px-6">
       <h2 className="text-[3.5rem] text-center font-bold mb-10">My Projects</h2>
 
       <div className="flex flex-col gap-10">
@@ -127,7 +127,7 @@ const Projects = () => {
           </article>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 
