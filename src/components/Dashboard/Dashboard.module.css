@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
 }
-
 .section1 {
   padding: 70px;
   display: flex;
@@ -11,28 +10,22 @@
   align-items: center;
   height: fit-content;
 }
-
 /** SECTION 2 **/
 .section2 {
   height: fit-content;
   padding-bottom: 30px;
 }
-
-
 /** SECTION 3 **/
 .section3 {
   min-height: calc(100vh - 7rem);
   height: fit-content;
   
 }
-
-
-/** SECTION 4 **/
+/** SECTION 4 — footer **/
 .section4 {
-  min-height: calc(100vh - 70px);
+  min-height: fit-content;
   height: fit-content;
 }
-
 .button {
   padding: 10px 20px;
 }
