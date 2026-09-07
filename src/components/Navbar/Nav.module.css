@@ -68,7 +68,7 @@
 }
 /* Active Class Styling */
 .navItem.active {
-  color: #f39c12; /* Active link color */
+  color: var(--orange-brand); /* Active link color — aliniat cu paleta site-ului */
   padding-bottom: 1.2rem;
   border-bottom: 2px solid var(--light-brand); /* Border on active link */
 }
