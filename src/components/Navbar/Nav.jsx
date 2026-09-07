@@ -1,10 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import styles from './Nav.module.css';
-
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('section1');
-
   // Handle scroll to a section with smooth scrolling
   const handleScrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -15,7 +13,6 @@ const Navbar = () => {
       });
     }
   };
-
   useEffect(() => {
     const sections = document.querySelectorAll('section'); // Select all sections
     const observer = new IntersectionObserver(
@@ -27,17 +24,15 @@ const Navbar = () => {
         });
       },
       {
-        threshold: 0.5, // Trigger when 50% of the section is visible
+        rootMargin: '-50% 0px -50% 0px', // consideră "vizibilă" doar banda din mijlocul ecranului
+        threshold: 0,
       }
     );
-
     sections.forEach((section) => observer.observe(section)); // Observe each section
-
     return () => {
       sections.forEach((section) => observer.unobserve(section)); // Cleanup observer on unmount
     };
   }, []);
-
   return (
     <div className={styles.header}>
       <nav className={styles.navbar}>
@@ -65,5 +60,4 @@ const Navbar = () => {
     </div>
   );
 };
-
 export default Navbar;
