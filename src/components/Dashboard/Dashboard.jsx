@@ -6,10 +6,7 @@ import Navbar from '../Navbar/Nav';
 import BackgroundAnimation from '../BackgroundAnimation/BackgroundAnimation';
 import SkillsSection from '../SkillsSection/SkillsSection';
 import Projects from '../Projects/Projects';
-
-
-
-
+import Footer from '../Footer/Footer';
 function Dashboard() {
   return (
     <>
@@ -39,13 +36,13 @@ function Dashboard() {
           </section>
           <section
             id="section4"
-            className={styles.section2} 
+            className={styles.section4}
           >
+            <Footer />
           </section>
         </div>
       </div>
     </>
   );
 }
-
 export default Dashboard;
